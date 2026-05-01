@@ -67,6 +67,22 @@ const currentlyItems = [
   "Reading: Business strategy and self-improvement",
 ];
 
+const LINKEDIN_URL =
+  "https://www.linkedin.com/in/veeranala-kiran-teja-97a627283/";
+
+function LinkedInIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      className={className}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
+    </svg>
+  );
+}
+
 export default function Home() {
   return (
     <div className="min-h-screen bg-[#070709] text-zinc-100">
@@ -112,12 +128,21 @@ export default function Home() {
             Sales Engineer | Co-Founder of DoubleLead | Building the future of sales
             execution in Southeast Asia
           </p>
-          <div className="mt-10 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap items-center gap-3">
             <a href="#projects" className="premium-button">
               View My Work
             </a>
             <a href="#contact" className="premium-button-secondary">
               Get In Touch
+            </a>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 px-5 py-3 text-sm font-semibold text-zinc-100 transition hover:bg-white/10"
+            >
+              <LinkedInIcon className="h-4 w-4 shrink-0" />
+              LinkedIn
             </a>
           </div>
         </RevealSection>
@@ -325,49 +350,42 @@ export default function Home() {
         </RevealSection>
 
         <RevealSection id="contact" className="premium-section border-b-0 py-16 md:py-24">
-          <p className="section-label">Contact</p>
-          <form className="mt-6 max-w-3xl space-y-3">
-            <div className="grid gap-3 md:grid-cols-2">
-              <input
-                type="text"
-                placeholder="Your name"
-                className="input-field"
-                required
-              />
-              <input
-                type="email"
-                placeholder="Your email"
-                className="input-field"
-                required
-              />
-            </div>
-            <textarea
-              placeholder="Your message"
-              className="input-field min-h-28 resize-none"
-              required
-            />
-            <button type="submit" className="premium-button w-full md:w-auto">
-              Send Message
-            </button>
-          </form>
-          <div className="mt-14 flex flex-wrap items-center gap-6 border-t border-white/10 pt-8">
-            <a
-              href="https://www.linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              className="text-sm font-medium text-zinc-300 transition hover:text-white"
-            >
-              LinkedIn
-            </a>
-            <a
-              href="mailto:kiranveeranala@gmail.com"
-              className="text-sm font-medium text-zinc-300 transition hover:text-white"
-            >
-              Email
-            </a>
-          </div>
+          <h2 className="text-2xl font-medium tracking-tight text-white md:text-3xl">
+            Let&apos;s Connect
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-zinc-300 md:text-lg">
+            Whether you&apos;re interested in DoubleLead, want to talk sales, or just
+            want to connect — find me on LinkedIn.
+          </p>
+          <a
+            href={LINKEDIN_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="premium-button-secondary mt-8 inline-flex items-center gap-2"
+          >
+            Connect on LinkedIn
+            <span aria-hidden>→</span>
+          </a>
         </RevealSection>
       </main>
+
+      <footer className="border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-col gap-6 px-6 py-10 md:flex-row md:items-center md:justify-between md:px-10">
+          <div className="flex flex-wrap items-center gap-6">
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-400 transition hover:text-white"
+              aria-label="Kiran Veeranala on LinkedIn"
+            >
+              <LinkedInIcon className="h-5 w-5" />
+            </a>
+            <p className="text-sm text-zinc-500">© 2026 Kiran Veeranala</p>
+          </div>
+          <p className="text-sm text-zinc-500">Built with Cursor and Claude</p>
+        </div>
+      </footer>
 
       <Chatbot />
     </div>

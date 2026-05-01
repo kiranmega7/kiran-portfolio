@@ -2,6 +2,7 @@ export const kiranProfileContext = `
 HERO / IDENTITY
 Name: Kiran Veeranala
 Tagline: Sales Engineer | Co-Founder of DoubleLead | Building the future of sales execution in Southeast Asia
+LinkedIn: https://www.linkedin.com/in/veeranala-kiran-teja-97a627283/
 
 ABOUT
 Kiran Veeranala is a 23-year-old Singapore-based sales professional and entrepreneur. He operates at the intersection of high-performance B2B sales and early-stage startup building — managing industrial automation accounts by day while co-founding DoubleLead at night.
