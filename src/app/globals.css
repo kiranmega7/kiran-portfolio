@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #08080a;
+  color: #f4f4f5;
+}
+
+@layer components {
+  .section-title {
+    @apply text-2xl font-semibold tracking-tight text-white md:text-3xl;
+  }
+
+  .card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur;
+  }
+
+  .input-field {
+    @apply w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-white/30;
+  }
+}
