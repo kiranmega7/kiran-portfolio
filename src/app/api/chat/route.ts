@@ -8,6 +8,7 @@ type ChatMessage = {
 
 export async function POST(request: NextRequest) {
   const apiKey = process.env.ANTHROPIC_API_KEY;
+  const model = process.env.ANTHROPIC_MODEL || "claude-sonnet-4-5";
 
   if (!apiKey) {
     return new Response("Missing ANTHROPIC_API_KEY", { status: 500 });
@@ -23,7 +24,7 @@ export async function POST(request: NextRequest) {
       "anthropic-version": "2023-06-01",
     },
     body: JSON.stringify({
-      model: "claude-3-5-sonnet-20241022",
+      model,
       max_tokens: 600,
       stream: true,
       system: `You are a portfolio assistant for Kiran Veeranala.
@@ -42,7 +43,10 @@ ${kiranProfileContext}`,
 
   if (!anthropicResponse.ok || !anthropicResponse.body) {
     const errorText = await anthropicResponse.text();
-    return new Response(errorText || "Anthropic request failed", { status: 500 });
+    return new Response(errorText || "Anthropic request failed", {
+      status: anthropicResponse.status || 500,
+      headers: { "Content-Type": "application/json" },
+    });
   }
   const responseBody = anthropicResponse.body;
 

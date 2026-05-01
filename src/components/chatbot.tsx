@@ -46,7 +46,8 @@ export default function Chatbot() {
       });
 
       if (!response.ok || !response.body) {
-        throw new Error("Unable to stream response");
+        const errorText = await response.text();
+        throw new Error(errorText || "Unable to stream response");
       }
 
       const reader = response.body.getReader();
@@ -70,12 +71,13 @@ export default function Chatbot() {
         }
       }
     } catch (error) {
+      const errorMessage =
+        error instanceof Error ? error.message : "Unable to stream response";
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "Unable to connect to Claude right now. Check your ANTHROPIC_API_KEY and try again.",
+          content: `Unable to connect to Claude right now. ${errorMessage}`,
         },
       ]);
       console.error(error);
