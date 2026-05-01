@@ -12,16 +12,12 @@ body {
 }
 
 @layer components {
-  .section-title {
-    @apply text-2xl font-semibold tracking-tight text-white md:text-3xl;
+  .section-label {
+    @apply text-[11px] uppercase tracking-[0.22em] text-zinc-500 md:text-xs;
   }
 
   .premium-section {
-    @apply border-b border-white/10 py-14 md:py-20;
-  }
-
-  .premium-card {
-    @apply rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-zinc-300 md:p-7;
+    @apply border-b border-white/10;
   }
 
   .premium-button {
@@ -38,5 +34,54 @@ body {
 
   .input-field {
     @apply w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-white/30;
+  }
+
+  .hero-glow-wrap {
+    @apply relative;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 20rem;
+    height: 20rem;
+    left: 0;
+    top: -4rem;
+    border-radius: 9999px;
+    background: radial-gradient(
+      circle at center,
+      rgba(148, 163, 184, 0.18) 0%,
+      rgba(99, 102, 241, 0.1) 30%,
+      rgba(7, 7, 9, 0) 75%
+    );
+    filter: blur(20px);
+    animation: heroGlowMove 6s ease-in-out infinite alternate;
+    pointer-events: none;
+  }
+
+  .timeline-dot {
+    @apply h-3 w-3 rounded-full border border-zinc-300/80 bg-[#070709];
+  }
+
+  .timeline-line {
+    position: absolute;
+    top: 1.15rem;
+    bottom: -1.25rem;
+    width: 1px;
+    background: linear-gradient(
+      to bottom,
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.05)
+    );
+  }
+}
+
+@keyframes heroGlowMove {
+  from {
+    transform: translate3d(-8px, -4px, 0) scale(0.96);
+    opacity: 0.7;
+  }
+  to {
+    transform: translate3d(24px, 10px, 0) scale(1.08);
+    opacity: 1;
   }
 }
