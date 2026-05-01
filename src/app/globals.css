@@ -16,6 +16,10 @@ body {
     @apply text-[11px] uppercase tracking-[0.22em] text-zinc-500 md:text-xs;
   }
 
+  .subsection-label {
+    @apply mb-2 mt-0 text-[11px] uppercase tracking-[0.22em] text-zinc-500 md:text-xs;
+  }
+
   .premium-section {
     @apply border-b border-white/10;
   }
