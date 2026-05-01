@@ -8,39 +8,68 @@ const RevealSection = dynamic(() => import("@/components/reveal-section"), {
 });
 
 export default function Home() {
+  const timeline = [
+    {
+      label: "Completed",
+      title: "National Service",
+      subtitle: "Completed",
+    },
+    {
+      label: "Foundation",
+      title: "B2C Sales",
+      subtitle: "Built sales fundamentals",
+    },
+    {
+      label: "Current",
+      title: "PLC Automation",
+      subtitle: "B2B Sales Engineer",
+    },
+    {
+      label: "Current",
+      title: "DoubleLead",
+      subtitle: "Co-founder",
+    },
+    {
+      label: "Coming Soon",
+      title: "SaaS AE",
+      subtitle: "Next chapter",
+    },
+  ];
+
+  const statCards = [
+    { value: "$200K+", label: "in quotes managed" },
+    { value: "2", label: "months B2B experience" },
+    { value: "1", label: "SaaS product built" },
+    { value: "SEA", label: "target market" },
+  ];
+
   return (
-    <div className="min-h-screen bg-[#08080A] text-zinc-100">
-      <main className="mx-auto flex w-full max-w-5xl flex-col gap-28 px-6 py-14 md:px-10">
-        <RevealSection id="hero" className="pt-10">
-          <p className="mb-5 text-sm uppercase tracking-[0.2em] text-zinc-500">
-            Portfolio
+    <div className="min-h-screen bg-[#070709] text-zinc-100">
+      <main className="mx-auto w-full max-w-6xl px-6 pb-24 pt-10 md:px-10">
+        <RevealSection id="hero" className="premium-section border-none pt-8">
+          <p className="text-xs uppercase tracking-[0.22em] text-zinc-500">
+            Singapore / Portfolio
           </p>
-          <h1 className="text-4xl font-semibold tracking-tight text-white md:text-6xl">
+          <h1 className="mt-5 max-w-4xl text-balance text-5xl font-semibold tracking-[-0.03em] text-white md:text-7xl">
             Kiran Veeranala
           </h1>
-          <p className="mt-6 max-w-3xl text-lg text-zinc-300 md:text-xl">
-            Sales Engineer | Founder of DoubleLead | Building the future of
-            sales execution in Southeast Asia
+          <p className="mt-6 max-w-3xl text-base leading-relaxed text-zinc-300 md:text-xl">
+            Sales Engineer | Founder of DoubleLead | Building the future of sales
+            execution in Southeast Asia
           </p>
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="#projects"
-              className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200"
-            >
+          <div className="mt-10 flex flex-wrap gap-3">
+            <a href="#projects" className="premium-button">
               View My Work
             </a>
-            <a
-              href="#contact"
-              className="rounded-full border border-white/30 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
-            >
+            <a href="#contact" className="premium-button-secondary">
               Get In Touch
             </a>
           </div>
         </RevealSection>
 
-        <RevealSection id="about" className="space-y-4">
+        <RevealSection id="about" className="premium-section">
           <h2 className="section-title">About</h2>
-          <div className="card space-y-3 text-zinc-300">
+          <div className="grid gap-3 text-sm text-zinc-300 md:grid-cols-2 md:text-base">
             <p>23 years old, Singapore-based.</p>
             <p>Currently a Sales Engineer at PLC Automation.</p>
             <p>Co-founder of DoubleLead.</p>
@@ -48,87 +77,86 @@ export default function Home() {
               Pursuing an Accounting & Finance degree at Murdoch University via
               Kaplan.
             </p>
-            <p>Background in B2B industrial automation sales.</p>
+            <p className="md:col-span-2">
+              Background in B2B industrial automation sales.
+            </p>
           </div>
         </RevealSection>
 
-        <RevealSection id="timeline" className="space-y-4">
+        <RevealSection id="timeline" className="premium-section">
           <h2 className="section-title">Career Timeline</h2>
-          <ul className="card space-y-4 text-zinc-300">
-            {[
-              "National Service -> completed",
-              "B2C Sales -> foundation",
-              "PLC Automation -> B2B Sales Engineer (current)",
-              "DoubleLead -> Co-founder (current)",
-              "SaaS AE -> next chapter (coming soon)",
-            ].map((item) => (
-              <li key={item} className="border-l border-white/20 pl-4">
-                {item}
+          <ul className="space-y-6">
+            {timeline.map((item) => (
+              <li
+                key={item.title}
+                className="grid gap-4 border-l border-white/15 pl-4 sm:grid-cols-[130px_1fr] sm:pl-6"
+              >
+                <p className="text-xs font-medium uppercase tracking-[0.14em] text-zinc-500">
+                  {item.label}
+                </p>
+                <div>
+                  <h3 className="text-lg font-semibold text-white">{item.title}</h3>
+                  <p className="mt-1 text-zinc-300">{item.subtitle}</p>
+                </div>
               </li>
             ))}
           </ul>
         </RevealSection>
 
-        <RevealSection id="projects" className="space-y-4">
+        <RevealSection id="projects" className="premium-section">
           <h2 className="section-title">Projects</h2>
-          <article className="card space-y-3 text-zinc-300">
-            <h3 className="text-xl font-semibold text-white">DoubleLead</h3>
+          <article className="premium-card">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <h3 className="text-2xl font-semibold tracking-tight text-white">
+                DoubleLead
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["AI", "SaaS", "Sales Automation", "B2B"].map((tag) => (
+                  <span key={tag} className="tag-pill">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
             <p>
-              AI powered sales follow-up tool for solo salespeople in Southeast
-              Asia. Built to solve the #1 reason deals are lost: lack of
-              follow-up.
+              AI powered sales follow-up tool for solo salespeople in Southeast Asia.
+              Built to solve the #1 reason deals are lost: lack of follow-up.
             </p>
             <p>
-              Target users include insurance agents, property agents, and
-              freelance salespeople.
+              Target users include insurance agents, property agents, and freelance
+              salespeople.
             </p>
             <a
               href="https://doublelead.vercel.app"
               target="_blank"
               rel="noreferrer"
-              className="inline-block text-sm font-medium text-indigo-300 hover:text-indigo-200"
+              className="inline-flex items-center text-sm font-medium text-zinc-200 transition hover:text-white"
             >
-              Visit Project
+              Visit Project {"->"}
             </a>
           </article>
         </RevealSection>
 
-        <RevealSection id="stats" className="space-y-4">
+        <RevealSection id="stats" className="premium-section">
           <h2 className="section-title">Stats</h2>
-          <div className="grid gap-4 md:grid-cols-2">
-            {[
-              "$200K+ in quotes managed",
-              "2 months B2B experience",
-              "1 SaaS product built",
-              "Target market: SEA",
-            ].map((stat) => (
-              <div key={stat} className="card text-lg font-medium text-zinc-100">
-                {stat}
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {statCards.map((stat) => (
+              <div key={stat.value + stat.label} className="premium-card">
+                <p className="text-4xl font-semibold tracking-tight text-white">
+                  {stat.value}
+                </p>
+                <p className="mt-2 text-sm uppercase tracking-[0.08em] text-zinc-400">
+                  {stat.label}
+                </p>
               </div>
             ))}
           </div>
         </RevealSection>
 
-        <RevealSection id="contact" className="space-y-4 pb-20">
+        <RevealSection id="contact" className="premium-section border-b-0 pb-16">
           <h2 className="section-title">Contact</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="card flex flex-col gap-4">
-              <a
-                href="mailto:kiranveeranala@gmail.com"
-                className="rounded-lg border border-white/20 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-white/10"
-              >
-                Email
-              </a>
-              <a
-                href="https://www.linkedin.com"
-                target="_blank"
-                rel="noreferrer"
-                className="rounded-lg border border-white/20 px-4 py-3 text-center text-sm font-semibold text-white hover:bg-white/10"
-              >
-                LinkedIn
-              </a>
-            </div>
-            <form className="card space-y-3">
+          <form className="premium-card space-y-3">
+            <div className="grid gap-3 md:grid-cols-2">
               <input
                 type="text"
                 placeholder="Your name"
@@ -141,18 +169,31 @@ export default function Home() {
                 className="input-field"
                 required
               />
-              <textarea
-                placeholder="Your message"
-                className="input-field min-h-28 resize-none"
-                required
-              />
-              <button
-                type="submit"
-                className="w-full rounded-lg bg-white px-4 py-3 text-sm font-semibold text-black hover:bg-zinc-200"
-              >
-                Send Message
-              </button>
-            </form>
+            </div>
+            <textarea
+              placeholder="Your message"
+              className="input-field min-h-28 resize-none"
+              required
+            />
+            <button type="submit" className="premium-button w-full md:w-auto">
+              Send Message
+            </button>
+          </form>
+          <div className="mt-10 flex flex-wrap items-center gap-5 border-t border-white/10 pt-7">
+            <a
+              href="https://www.linkedin.com"
+              target="_blank"
+              rel="noreferrer"
+              className="text-sm font-medium text-zinc-300 transition hover:text-white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="mailto:kiranveeranala@gmail.com"
+              className="text-sm font-medium text-zinc-300 transition hover:text-white"
+            >
+              Email
+            </a>
           </div>
         </RevealSection>
       </main>

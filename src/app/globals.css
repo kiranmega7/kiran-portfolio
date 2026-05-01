@@ -7,7 +7,7 @@ html {
 }
 
 body {
-  background: #08080a;
+  background: #070709;
   color: #f4f4f5;
 }
 
@@ -16,11 +16,27 @@ body {
     @apply text-2xl font-semibold tracking-tight text-white md:text-3xl;
   }
 
-  .card {
-    @apply rounded-2xl border border-white/10 bg-white/[0.02] p-6 backdrop-blur;
+  .premium-section {
+    @apply border-b border-white/10 py-14 md:py-20;
+  }
+
+  .premium-card {
+    @apply rounded-2xl border border-white/10 bg-white/[0.02] p-5 text-zinc-300 md:p-7;
+  }
+
+  .premium-button {
+    @apply rounded-full bg-white px-6 py-3 text-sm font-semibold text-black transition hover:bg-zinc-200;
+  }
+
+  .premium-button-secondary {
+    @apply rounded-full border border-white/25 px-6 py-3 text-sm font-semibold text-zinc-100 transition hover:bg-white/10;
+  }
+
+  .tag-pill {
+    @apply rounded-full border border-white/15 bg-white/[0.03] px-3 py-1 text-xs font-medium text-zinc-300;
   }
 
   .input-field {
-    @apply w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-white/30;
+    @apply w-full rounded-lg border border-white/15 bg-white/5 px-3 py-2.5 text-sm text-white outline-none placeholder:text-zinc-500 focus:border-white/30;
   }
 }
