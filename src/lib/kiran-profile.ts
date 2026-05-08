@@ -60,6 +60,13 @@ Apollo = leads. HubSpot = CRM. DoubleLead = execution.
 
 Target users: Insurance agents, property agents, freelance salespeople across Singapore, Malaysia, Indonesia, and the Philippines.
 
+PROJECT — QUOTETRACKER
+QuoteTracker — AI powered sales pipeline tracker with automated follow ups and an AI chatbot that knows your deals.
+Built to replace a messy Google Sheet. Tracks quotes, auto-calculates follow up dates, and lets you ask your pipeline questions in plain English.
+Tech: Next.js, Supabase, Claude API
+Status: Live — piloted at PLC Automation Pte Ltd
+Website: https://quotation-tracker.vercel.app
+
 PHILOSOPHY
 I believe in leverage over labour.
 Systems over hustle. Scale over salary.

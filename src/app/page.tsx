@@ -221,7 +221,8 @@ export default function Home() {
 
         <RevealSection id="projects" className="premium-section py-16 md:py-24">
           <p className="section-label">Projects</p>
-          <article className="mt-6 max-w-4xl space-y-6">
+          <div className="mt-6 max-w-4xl space-y-16 md:space-y-20">
+          <article className="space-y-6">
             <div className="flex flex-wrap items-start justify-between gap-4">
               <h3 className="text-2xl font-medium tracking-tight text-white md:text-3xl">
                 DoubleLead — AI-Powered Sales Execution Tool
@@ -293,6 +294,45 @@ export default function Home() {
               doublelead.vercel.app {"->"}
             </a>
           </article>
+
+          <article className="space-y-6 border-t border-white/10 pt-16 md:pt-20">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <h3 className="text-2xl font-medium tracking-tight text-white md:text-3xl">
+                QuoteTracker
+              </h3>
+              <div className="flex flex-wrap gap-2">
+                {["AI", "B2B Sales", "SaaS", "Next.js", "Supabase"].map((tag) => (
+                  <span key={tag} className="tag-pill">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <p className="text-sm text-zinc-500">
+              Status: Live — piloted at PLC Automation Pte Ltd · Tech: Next.js, Supabase,
+              Claude API
+            </p>
+            <p className="text-lg leading-relaxed text-zinc-200 md:text-xl">
+              AI powered sales pipeline tracker with automated follow ups and an AI
+              chatbot that knows your deals.
+            </p>
+            <div className="space-y-4 text-zinc-300">
+              <p>
+                Built to replace my messy Google Sheet. Tracks quotes, auto-calculates
+                follow up dates, and lets you ask your pipeline questions in plain
+                English.
+              </p>
+            </div>
+            <a
+              href="https://quotation-tracker.vercel.app"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center text-sm font-medium text-zinc-200 transition hover:text-white"
+            >
+              quotation-tracker.vercel.app {"->"}
+            </a>
+          </article>
+          </div>
         </RevealSection>
 
         <RevealSection id="philosophy" className="premium-section py-16 md:py-24">
